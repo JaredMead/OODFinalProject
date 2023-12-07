@@ -8,15 +8,37 @@ namespace FinalProject
 {
     public class Section
     {
-        public int ID;
-        private static int count = 0;
+        #region Properties
+        protected int _ID;
+        public int ID
+        {
+            get
+            {
+                return _ID;
+            }
+        }
+        protected string _name;
+        public string name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
+        }
 
-        public string serverName;
-
-        int numberOfTables;
-
-        public int totalTables;
-        private int _activeTables;
+        protected int _totalTables;
+        public int totalTables
+        {
+            get
+            {
+                return _totalTables;
+            }
+        }
+        protected int _activeTables;
         public int activeTables
         {
             get
@@ -28,32 +50,53 @@ namespace FinalProject
                 _activeTables = value;
                 if(value > 0)
                 {
-                    totalTables += value;
+                    _totalTables += value;
                 }
             }
         }
 
-        int totalCustomers;
-        public int activeCustomers;
+        protected int _totalCustomers;
+        public int totalCustomers
+        {
+            get
+            {
+                return _totalCustomers;
+            }
+        }
+        protected int _activeCustomers;
+        public int activeCustomers
+        {
+            get
+            {
+                return _activeCustomers;
+            }
+            set
+            {
+                _activeCustomers = value;
+                if (value > 0)
+                {
+                    _totalCustomers += value;
+                }
+            }
+        }
+        #endregion
 
         public List<Table> assignedTables = new List<Table>();
 
+        #region Constructors
+        private static int count = 0;
         public Section()
         {
-            this.ID = count;
-            count++;
-            //asign ID based on the lowest number that is not already assigned
+            this._ID = count;
+            count++;//count is below id because I want a section 0 to act as a deafult section on startup
+        }
+        #endregion
 
-        }
-        void editTotals(int value)
-        {
-            
-        }
         public void asignTable(Table t)
-        {
-            assignedTables.Add(t);
+        {//adds table to this objects assignedtable, removes the table from the previous table, and sets the assigned section of the table to this section
+            this.assignedTables.Add(t);
+            t.assignedSection.assignedTables.Remove(t);
             t.assignedSection = this;
-            numberOfTables = assignedTables.Count();
         }
         ~Section()
         {

@@ -11,58 +11,79 @@ namespace FinalProject
     {
         public Table(int tableID, int maxPartySize)
         {
-            //check if tableID already exists
-
-            this.tableID = tableID;
-            this.maxPartySize = maxPartySize;
+            this._ID = tableID;
+            this._maxPartySize = maxPartySize;
 
         }
 
-        int tableID;
-
-        int maxPartySize;
-
-        public int tableStatus = 0;
-
-        private Party _partySat;
-        public Party partySat
+        #region Properties
+        protected int _ID;
+        public int ID
         {
             get
             {
-                return _partySat;
+                return _ID;
+            }
+        }
+        protected int _maxPartySize;
+        public int maxPartySize
+        {
+            get
+            {
+                return _maxPartySize;
+            }
+        }
+        protected int _status;
+        public int status
+        {
+            get
+            {
+                return _status;
             }
             set
             {
-                _partySat = value;
+                _status = value;
             }
         }
+        protected System.Drawing.Color _backcolor;
+        public System.Drawing.Color backColor
+        {
+            get
+            {
+                return _backcolor;
+            }
+            set
+            {
+                _backcolor = value;
+            }
+        }
+        #endregion
 
-        public System.Drawing.Color backColor;
-
+        public Party partySat;
         public Section assignedSection;
 
         public void createParty(string size, string name)
-        {
+        {// Chooses the apropriate party constructor from recieved inputs
             name.Trim();
             int sizeint;
-            if(!int.TryParse(size, out sizeint))
+            if(!int.TryParse(size, out sizeint))//no party size was given
             {
-                if(name == "")
+                if(name == "")//no name was given
                 {
                     partySat = new Party();
                 }
-                else
+                else//party name was given
                 {
                     partySat = new Party(name);
                 }
             }
-            else
+            else//party size was given
             {
-                if(name == "")
+                if(name == "")//no name was given
                 {
                     partySat = new Party(sizeint);
                 }
-                else
+                else//party name was given
                 {
                     partySat = new Party(sizeint, name);
                 }
@@ -71,23 +92,14 @@ namespace FinalProject
             assignedSection.activeTables++;
         }
         public void deleteParty()
-        {
+        {// stops the timer and removes party from party sat
             assignedSection.activeTables--;
             assignedSection.activeCustomers -= partySat.partySize;
 
             partySat.timer.Stop();
             partySat.time = partySat.timer.ElapsedMilliseconds;
 
-            //send the current party to a list or find a way to use the partyfactory accross multiple table objects
             partySat = null;
-        }
-
-        void tableSizeChecker()
-        {
-            if(partySat.partySize > maxPartySize)
-            {
-                //send warning to log
-            }
         }
 
         ~Table()

@@ -14,7 +14,6 @@ namespace FinalProject
     {
         TableFactory tFactory = new TableFactory();
         SectionFactory sFactory = new SectionFactory();
-        public PartyFactory pFactory = new PartyFactory();
         Section defaultsec;
         public tableOrganiser()
         {
@@ -40,7 +39,7 @@ namespace FinalProject
             SectionsList.Format += (sender, args) =>
             {
                 var section = (Section) args.Value;
-                args.Value = string.Format("ID: {0}, Name: {1}", section.ID, section.serverName);
+                args.Value = string.Format("ID: {0}, Name: {1}", section.ID, section.name);
             };
             #endregion
 
@@ -88,7 +87,7 @@ namespace FinalProject
         private void update()
         {
             idtxt.Text = defaultsec.ID.ToString();
-            nametxt.Text = defaultsec.serverName;
+            nametxt.Text = defaultsec.name;
             tablestxt.Text = defaultsec.assignedTables.Count.ToString();
             activetxt.Text = defaultsec.activeTables.ToString();
             totaltxt.Text = defaultsec.totalTables.ToString();
