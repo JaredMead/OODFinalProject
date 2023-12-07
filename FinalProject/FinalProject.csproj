@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factories\PartyFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Factories\SectionFactory.cs" />
@@ -65,10 +66,10 @@
     <Compile Include="secondaryForms\TableForm.Designer.cs">
       <DependentUpon>TableForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SectionForm.cs">
+    <Compile Include="secondaryForms\SectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SectionForm.Designer.cs">
+    <Compile Include="secondaryForms\SectionForm.Designer.cs">
       <DependentUpon>SectionForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -86,7 +87,7 @@
     <EmbeddedResource Include="secondaryForms\TableForm.resx">
       <DependentUpon>TableForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SectionForm.resx">
+    <EmbeddedResource Include="secondaryForms\SectionForm.resx">
       <DependentUpon>SectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

@@ -14,16 +14,17 @@ namespace FinalProject
     {
         TableFactory tFactory = new TableFactory();
         SectionFactory sFactory = new SectionFactory();
+        PartyFactory pfactory = new PartyFactory();
         Section defaultsec;
         public tableOrganiser()
         {
             InitializeComponent();
-            defaultsec = sFactory.newSection();
+            defaultsec = SectionFactory.newSection();
             var t0 = tFactory.newTable(0, 0);
             var t1 = tFactory.newTable(1, 4);
             var t2 = tFactory.newTable(2, 4);
             var t3 = tFactory.newTable(3, 4);
-            foreach(Table t in tFactory.createdTables)
+            foreach(Table t in TableFactory.createdTables)
             {
                 defaultsec.asignTable(t);
             }
@@ -32,7 +33,7 @@ namespace FinalProject
             #region Formating
             var listBox = new ListBox
             {
-                DataSource = sFactory.createdSections,
+                DataSource = SectionFactory.createdSections,
                 Dock = DockStyle.Fill,
                 FormattingEnabled = true,
             };
@@ -48,39 +49,40 @@ namespace FinalProject
 
         private void createSectionBtn_Click(object sender, EventArgs e)
         {
-            var sectionobj = sFactory.newSection();
+            var sectionobj = SectionFactory.newSection();
             SectionsList.Items.Add(sectionobj);
         }
 
         private void SectionsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SectionForm openForm = new SectionForm();
-            openForm.ShowDialog();
+            Section selected;
+            //SectionForm openForm = new SectionForm(selected);
+            //openForm.ShowDialog();
 
             
         }
 
         private void table1btn_Click(object sender, EventArgs e)
         {
-            TableForm openform = new TableForm(tFactory.createdTables[1]);
+            TableForm openform = new TableForm(TableFactory.createdTables[1]);
             openform.ShowDialog();
-            table1btn.BackColor = tFactory.createdTables[1].backColor;
+            table1btn.BackColor = TableFactory.createdTables[1].backColor;
             update();
             
         }
         private void tbl2btn_Click(object sender, EventArgs e)
         {
-            TableForm openform = new TableForm(tFactory.createdTables[2]);
+            TableForm openform = new TableForm(TableFactory.createdTables[2]);
             openform.ShowDialog();
-            tbl2btn.BackColor = tFactory.createdTables[2].backColor;
+            tbl2btn.BackColor = TableFactory.createdTables[2].backColor;
             update();
         }
 
         private void tbl3btn_Click(object sender, EventArgs e)
         {
-            TableForm openform = new TableForm(tFactory.createdTables[3]);
+            TableForm openform = new TableForm(TableFactory.createdTables[3]);
             openform.ShowDialog();
-            tbl3btn.BackColor = tFactory.createdTables[3].backColor;
+            tbl3btn.BackColor = TableFactory.createdTables[3].backColor;
             update();
         }
         

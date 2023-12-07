@@ -10,22 +10,22 @@ namespace FinalProject
     {
         public SectionFactory()
         {
-            sectionList = new List<Section>();
+            _sectionList = new List<Section>();
         }
         
-        private List<Section> sectionList;
-        public IList<Section> createdSections
+        protected static List<Section> _sectionList;
+        public static IList<Section> createdSections
         {
             get
             {
-                return sectionList.AsReadOnly();
+                return _sectionList.AsReadOnly();
             }
         }
 
-        public Section newSection()
+        public static Section newSection()
         {
             Section temp = new Section();
-            sectionList.Add(temp);
+            _sectionList.Add(temp);
             return temp;
         }
     }

@@ -70,22 +70,22 @@ namespace FinalProject
             {
                 if(name == "")//no name was given
                 {
-                    partySat = new Party();
+                    partySat = PartyFactory.newParty();
                 }
                 else//party name was given
                 {
-                    partySat = new Party(name);
+                    partySat = PartyFactory.newParty(name);
                 }
             }
             else//party size was given
             {
                 if(name == "")//no name was given
                 {
-                    partySat = new Party(sizeint);
+                    partySat = PartyFactory.newParty(sizeint);
                 }
                 else//party name was given
                 {
-                    partySat = new Party(sizeint, name);
+                    partySat = PartyFactory.newParty(sizeint, name);
                 }
             }
             assignedSection.activeCustomers += partySat.partySize;

@@ -10,21 +10,21 @@ namespace FinalProject
     {
         public TableFactory()
         {
-            privateTableList = new List<Table>();
+            _TableList = new List<Table>();
         }
-        private List<Table> privateTableList;
-        public IList<Table> createdTables
+        private static List<Table> _TableList;
+        public static IList<Table> createdTables
         {
             get
             {
-                return privateTableList.AsReadOnly();
+                return _TableList.AsReadOnly();
             }
         }
 
         public Table newTable(int tableID, int maxPartySize)
         {
             Table temp = new Table(tableID, maxPartySize);
-            privateTableList.Add(temp);
+            _TableList.Add(temp);
             return temp;
         }
 

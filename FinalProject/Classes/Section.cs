@@ -54,6 +54,18 @@ namespace FinalProject
                 }
             }
         }
+        protected System.Drawing.Color _bordercolor;
+        public System.Drawing.Color bordercolor
+        {
+            get
+            {
+                return _bordercolor;
+            }
+            set
+            {
+                _bordercolor = value;
+            }
+        }
 
         protected int _totalCustomers;
         public int totalCustomers
@@ -95,12 +107,19 @@ namespace FinalProject
         public void asignTable(Table t)
         {//adds table to this objects assignedtable, removes the table from the previous table, and sets the assigned section of the table to this section
             this.assignedTables.Add(t);
-            t.assignedSection.assignedTables.Remove(t);
+            if(t.assignedSection != null)
+            {
+                t.assignedSection.assignedTables.Remove(t);
+            }
             t.assignedSection = this;
         }
         ~Section()
         {
-            //set all tables in setion to section 0
+            //set all tables in section to section 0
+            foreach (Table t in assignedTables)
+            {
+                SectionFactory.createdSections[0].asignTable(t);
+            }
         }
     }
 }

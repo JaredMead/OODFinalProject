@@ -50,15 +50,6 @@ namespace FinalProject
         public long time;
         //count is used for asinging table IDs
         private static int count = 0;
-        //the List that stores the logged Party Objects
-        protected static List<Party> _partyLog = new List<Party>();
-        public static IList<Party> partyLog
-        {
-            get
-            {
-                return _partyLog.AsReadOnly();
-            }
-        }
 
         #region Constructors
         public Party()
@@ -68,7 +59,6 @@ namespace FinalProject
             this.name = "Default";
             this.partySize = 1;
             this.timer.Start();
-            log();
         }
         public Party(int size)
         {
@@ -77,7 +67,6 @@ namespace FinalProject
             this.name = "Default";
             this.partySize = size;
             this.timer.Start();
-            log();
         }
         public Party(string name)
         {
@@ -86,7 +75,6 @@ namespace FinalProject
             this.name = name;
             this.partySize = 1;
             this.timer.Start();
-            log();
         }
         public Party(int size, string name)
         {
@@ -95,13 +83,8 @@ namespace FinalProject
             this.name = name;
             this.partySize = size;
             this.timer.Start();
-            log();
         }
         #endregion
-        internal void log()
-        {// creates a log of the created party
-            _partyLog.Add(this);
-        }
 
         ~Party()
         {
