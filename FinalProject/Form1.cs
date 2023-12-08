@@ -21,9 +21,10 @@ namespace FinalProject
             InitializeComponent();
             defaultsec = SectionFactory.newSection();
             var t0 = tFactory.newTable(0, 0);
-            var t1 = tFactory.newTable(1, 4);
-            var t2 = tFactory.newTable(2, 4);
-            var t3 = tFactory.newTable(3, 4);
+            for(int x = 1; x<10; x++)
+            {
+                var table = tFactory.newTable(x, 4);
+            }
             foreach(Table t in TableFactory.createdTables)
             {
                 defaultsec.asignTable(t);
@@ -51,47 +52,91 @@ namespace FinalProject
         {
             var sectionobj = SectionFactory.newSection();
             SectionsList.Items.Add(sectionobj);
+            update();
         }
 
         private void SectionsList_SelectedIndexChanged(object sender, EventArgs e)
         {
             SectionForm openForm = new SectionForm(SectionFactory.createdSections[SectionsList.SelectedIndex + 1]);
             openForm.ShowDialog();
-
+            update();
             
         }
-
-        private void table1btn_Click(object sender, EventArgs e)
+        #region Table Buttons
+        private void tbl1btn_Click(object sender, EventArgs e)
         {
             TableForm openform = new TableForm(TableFactory.createdTables[1]);
             openform.ShowDialog();
-            table1btn.BackColor = TableFactory.createdTables[1].backColor;
             update();
-            
         }
         private void tbl2btn_Click(object sender, EventArgs e)
         {
             TableForm openform = new TableForm(TableFactory.createdTables[2]);
             openform.ShowDialog();
-            tbl2btn.BackColor = TableFactory.createdTables[2].backColor;
             update();
         }
-
         private void tbl3btn_Click(object sender, EventArgs e)
         {
             TableForm openform = new TableForm(TableFactory.createdTables[3]);
             openform.ShowDialog();
-            tbl3btn.BackColor = TableFactory.createdTables[3].backColor;
             update();
         }
-        
+        private void table4btn_Click(object sender, EventArgs e)
+        {
+            TableForm openform = new TableForm(TableFactory.createdTables[4]);
+            openform.ShowDialog();
+            update();
+        }
+        private void tbl5btn_Click(object sender, EventArgs e)
+        {
+            TableForm openform = new TableForm(TableFactory.createdTables[5]);
+            openform.ShowDialog();
+            update();
+        }
+        private void tbl6btn_Click(object sender, EventArgs e)
+        {
+            TableForm openform = new TableForm(TableFactory.createdTables[6]);
+            openform.ShowDialog();
+            update();
+        }
+        private void tbl7btn_Click(object sender, EventArgs e)
+        {
+            TableForm openform = new TableForm(TableFactory.createdTables[7]);
+            openform.ShowDialog();
+            update();
+        }
+        private void tbl8btn_Click(object sender, EventArgs e)
+        {
+            TableForm openform = new TableForm(TableFactory.createdTables[8]);
+            openform.ShowDialog();
+            update();
+        }
+        private void tbl9btn_Click(object sender, EventArgs e)
+        {
+            TableForm openform = new TableForm(TableFactory.createdTables[9]);
+            openform.ShowDialog();
+            update();
+        }
+        #endregion
+
+        private void historybtn_Click(object sender, EventArgs e)
+        {
+            HistoryForm openform = new HistoryForm();
+            openform.ShowDialog();
+        }
         private void update()
         {
-            table1btn.BackColor = TableFactory.createdTables[1].backColor;
+            tbl1btn.BackColor = TableFactory.createdTables[1].backColor;
             tbl2btn.BackColor = TableFactory.createdTables[2].backColor;
             tbl3btn.BackColor = TableFactory.createdTables[3].backColor;
+            tbl4btn.BackColor = TableFactory.createdTables[4].backColor;
+            tbl5btn.BackColor = TableFactory.createdTables[5].backColor;
+            tbl6btn.BackColor = TableFactory.createdTables[6].backColor;
+            tbl7btn.BackColor = TableFactory.createdTables[7].backColor;
+            tbl8btn.BackColor = TableFactory.createdTables[8].backColor;
+            tbl9btn.BackColor = TableFactory.createdTables[9].backColor;
 
-            SectionsList.Update();
+            SectionsList.Refresh();
         }
     }
 }
