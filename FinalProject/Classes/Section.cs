@@ -47,11 +47,12 @@ namespace FinalProject
             }
             set
             {
-                _activeTables = value;
-                if(value > 0)
+                int temp = value;
+                if (temp > _activeTables)
                 {
-                    _totalTables += value;
+                    _totalTables++;
                 }
+                _activeTables = temp;
             }
         }
         protected System.Drawing.Color _bordercolor;
@@ -84,11 +85,12 @@ namespace FinalProject
             }
             set
             {
-                _activeCustomers = value;
-                if (value > 0)
+                int temp = value;
+                if(temp > _activeCustomers)
                 {
-                    _totalCustomers += value;
+                    _activeCustomers += temp;
                 }
+                _activeCustomers = temp;
             }
         }
         #endregion
@@ -101,6 +103,7 @@ namespace FinalProject
         {
             this._ID = count;
             count++;//count is below id because I want a section 0 to act as a deafult section on startup
+            this.name = "Default";
         }
         #endregion
 
@@ -115,11 +118,6 @@ namespace FinalProject
         }
         ~Section()
         {
-            //set all tables in section to section 0
-            foreach (Table t in assignedTables)
-            {
-                SectionFactory.createdSections[0].asignTable(t);
-            }
         }
     }
 }

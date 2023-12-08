@@ -30,23 +30,11 @@ namespace FinalProject
                 _name = value;
             }
         }
-        protected string _phone;
-        public string phone
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _phone = value;
-            }
-        }
         #endregion
         
         public int partySize;
         // a timer to log how long a table has been here
-        public Stopwatch timer = new Stopwatch();
+        private Stopwatch timer = new Stopwatch();
         public long time;
         //count is used for asinging table IDs
         private static int count = 0;
@@ -86,6 +74,11 @@ namespace FinalProject
         }
         #endregion
 
+        public void stopTimer()
+        {
+            timer.Stop();
+            time = timer.ElapsedMilliseconds;
+        }
         ~Party()
         {
         }

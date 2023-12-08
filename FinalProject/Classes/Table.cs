@@ -88,16 +88,15 @@ namespace FinalProject
                     partySat = PartyFactory.newParty(sizeint, name);
                 }
             }
-            assignedSection.activeCustomers += partySat.partySize;
-            assignedSection.activeTables++;
+            this.assignedSection.activeCustomers += partySat.partySize;
+            this.assignedSection.activeTables++;
         }
         public void DeleteParty()
         {// stops the timer and removes party from party sat
             assignedSection.activeTables--;
             assignedSection.activeCustomers -= partySat.partySize;
 
-            partySat.timer.Stop();
-            partySat.time = partySat.timer.ElapsedMilliseconds;
+            partySat.stopTimer();
 
             partySat = null;
         }

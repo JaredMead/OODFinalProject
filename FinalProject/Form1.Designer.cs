@@ -33,15 +33,9 @@ namespace FinalProject
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SectionsList = new System.Windows.Forms.ListBox();
             this.createSectionBtn = new System.Windows.Forms.Button();
-            this.idlbl = new System.Windows.Forms.Label();
             this.namelbl = new System.Windows.Forms.Label();
             this.activelbl = new System.Windows.Forms.Label();
             this.totallbl = new System.Windows.Forms.Label();
-            this.idtxt = new System.Windows.Forms.TextBox();
-            this.nametxt = new System.Windows.Forms.TextBox();
-            this.activetxt = new System.Windows.Forms.TextBox();
-            this.totaltxt = new System.Windows.Forms.TextBox();
-            this.tablestxt = new System.Windows.Forms.TextBox();
             this.tableslbl = new System.Windows.Forms.Label();
             this.tbl3btn = new System.Windows.Forms.Button();
             this.tbl2btn = new System.Windows.Forms.Button();
@@ -88,19 +82,10 @@ namespace FinalProject
             this.createSectionBtn.UseVisualStyleBackColor = true;
             this.createSectionBtn.Click += new System.EventHandler(this.createSectionBtn_Click);
             // 
-            // idlbl
-            // 
-            this.idlbl.AutoSize = true;
-            this.idlbl.Location = new System.Drawing.Point(165, 58);
-            this.idlbl.Name = "idlbl";
-            this.idlbl.Size = new System.Drawing.Size(21, 17);
-            this.idlbl.TabIndex = 9;
-            this.idlbl.Text = "ID";
-            // 
             // namelbl
             // 
             this.namelbl.AutoSize = true;
-            this.namelbl.Location = new System.Drawing.Point(202, 58);
+            this.namelbl.Location = new System.Drawing.Point(177, 96);
             this.namelbl.Name = "namelbl";
             this.namelbl.Size = new System.Drawing.Size(45, 17);
             this.namelbl.TabIndex = 10;
@@ -109,7 +94,7 @@ namespace FinalProject
             // activelbl
             // 
             this.activelbl.AutoSize = true;
-            this.activelbl.Location = new System.Drawing.Point(265, 58);
+            this.activelbl.Location = new System.Drawing.Point(265, 96);
             this.activelbl.Name = "activelbl";
             this.activelbl.Size = new System.Drawing.Size(46, 17);
             this.activelbl.TabIndex = 11;
@@ -118,51 +103,16 @@ namespace FinalProject
             // totallbl
             // 
             this.totallbl.AutoSize = true;
-            this.totallbl.Location = new System.Drawing.Point(327, 58);
+            this.totallbl.Location = new System.Drawing.Point(327, 96);
             this.totallbl.Name = "totallbl";
             this.totallbl.Size = new System.Drawing.Size(40, 17);
             this.totallbl.TabIndex = 12;
             this.totallbl.Text = "Total";
             // 
-            // idtxt
-            // 
-            this.idtxt.Location = new System.Drawing.Point(168, 87);
-            this.idtxt.Name = "idtxt";
-            this.idtxt.Size = new System.Drawing.Size(27, 22);
-            this.idtxt.TabIndex = 13;
-            // 
-            // nametxt
-            // 
-            this.nametxt.Location = new System.Drawing.Point(201, 87);
-            this.nametxt.Name = "nametxt";
-            this.nametxt.Size = new System.Drawing.Size(45, 22);
-            this.nametxt.TabIndex = 14;
-            // 
-            // activetxt
-            // 
-            this.activetxt.Location = new System.Drawing.Point(264, 87);
-            this.activetxt.Name = "activetxt";
-            this.activetxt.Size = new System.Drawing.Size(46, 22);
-            this.activetxt.TabIndex = 15;
-            // 
-            // totaltxt
-            // 
-            this.totaltxt.Location = new System.Drawing.Point(327, 89);
-            this.totaltxt.Name = "totaltxt";
-            this.totaltxt.Size = new System.Drawing.Size(39, 22);
-            this.totaltxt.TabIndex = 16;
-            // 
-            // tablestxt
-            // 
-            this.tablestxt.Location = new System.Drawing.Point(111, 87);
-            this.tablestxt.Name = "tablestxt";
-            this.tablestxt.Size = new System.Drawing.Size(48, 22);
-            this.tablestxt.TabIndex = 17;
-            // 
             // tableslbl
             // 
             this.tableslbl.AutoSize = true;
-            this.tableslbl.Location = new System.Drawing.Point(108, 58);
+            this.tableslbl.Location = new System.Drawing.Point(108, 96);
             this.tableslbl.Name = "tableslbl";
             this.tableslbl.Size = new System.Drawing.Size(51, 17);
             this.tableslbl.TabIndex = 18;
@@ -200,15 +150,9 @@ namespace FinalProject
             this.Controls.Add(this.tbl2btn);
             this.Controls.Add(this.tbl3btn);
             this.Controls.Add(this.tableslbl);
-            this.Controls.Add(this.tablestxt);
-            this.Controls.Add(this.totaltxt);
-            this.Controls.Add(this.activetxt);
-            this.Controls.Add(this.nametxt);
-            this.Controls.Add(this.idtxt);
             this.Controls.Add(this.totallbl);
             this.Controls.Add(this.activelbl);
             this.Controls.Add(this.namelbl);
-            this.Controls.Add(this.idlbl);
             this.Controls.Add(this.createSectionBtn);
             this.Controls.Add(this.SectionsList);
             this.Controls.Add(this.listBox1);
@@ -226,15 +170,9 @@ namespace FinalProject
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox SectionsList;
         private System.Windows.Forms.Button createSectionBtn;
-        private System.Windows.Forms.Label idlbl;
         private System.Windows.Forms.Label namelbl;
         private System.Windows.Forms.Label activelbl;
         private System.Windows.Forms.Label totallbl;
-        private System.Windows.Forms.TextBox idtxt;
-        private System.Windows.Forms.TextBox nametxt;
-        private System.Windows.Forms.TextBox activetxt;
-        private System.Windows.Forms.TextBox totaltxt;
-        private System.Windows.Forms.TextBox tablestxt;
         private System.Windows.Forms.Label tableslbl;
         private System.Windows.Forms.Button tbl3btn;
         private System.Windows.Forms.Button tbl2btn;

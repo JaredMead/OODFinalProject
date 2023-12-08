@@ -62,7 +62,7 @@ namespace FinalProject
                 t.backColor = Color.Gray;
                 if(t.partySat != null)
                 {
-                    t.deleteParty();
+                    t.DeleteParty();
                 }
             }
             else if(t.status == 1)
@@ -82,7 +82,7 @@ namespace FinalProject
                 t.backColor = Color.Red;
                 if(t.partySat != null)
                 {
-                    t.deleteParty();
+                    t.DeleteParty();
                 }
             }
             this.Close();

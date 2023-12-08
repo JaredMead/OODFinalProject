@@ -40,7 +40,7 @@ namespace FinalProject
             SectionsList.Format += (sender, args) =>
             {
                 var section = (Section) args.Value;
-                args.Value = string.Format("ID: {0}, Name: {1}", section.ID, section.name);
+                args.Value = string.Format("{0},        {1},                    {2},        {3}", section.assignedTables.Count(), section.name, section.activeTables,section.totalTables);
             };
             #endregion
 
@@ -55,9 +55,8 @@ namespace FinalProject
 
         private void SectionsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Section selected;
-            //SectionForm openForm = new SectionForm(selected);
-            //openForm.ShowDialog();
+            SectionForm openForm = new SectionForm(SectionFactory.createdSections[SectionsList.SelectedIndex + 1]);
+            openForm.ShowDialog();
 
             
         }
@@ -88,11 +87,11 @@ namespace FinalProject
         
         private void update()
         {
-            idtxt.Text = defaultsec.ID.ToString();
-            nametxt.Text = defaultsec.name;
-            tablestxt.Text = defaultsec.assignedTables.Count.ToString();
-            activetxt.Text = defaultsec.activeTables.ToString();
-            totaltxt.Text = defaultsec.totalTables.ToString();
+            table1btn.BackColor = TableFactory.createdTables[1].backColor;
+            tbl2btn.BackColor = TableFactory.createdTables[2].backColor;
+            tbl3btn.BackColor = TableFactory.createdTables[3].backColor;
+
+            SectionsList.Update();
         }
     }
 }

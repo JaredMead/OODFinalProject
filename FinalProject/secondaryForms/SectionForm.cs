@@ -17,12 +17,9 @@ namespace FinalProject
         public SectionForm(Section selected)
         {
             this.selected = selected;
-            activeTtxt.Text = selected.activeTables.ToString();
-            totalTtxt.Text = selected.totalTables.ToString();
-            activeCtxt.Text = selected.activeCustomers.ToString();
-            totalCtxt.Text = selected.totalCustomers.ToString();
-
             InitializeComponent();
+
+            settxtboxs();
         }
 
         private void nametxt_TextChanged(object sender, EventArgs e)
@@ -32,6 +29,7 @@ namespace FinalProject
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
+            
             this.Close();
         }
 
@@ -47,6 +45,16 @@ namespace FinalProject
                     break;
                 }
             }
+        }
+
+        private void settxtboxs()
+        {
+            nametxt.Text = selected.name;
+            tbltxt.Text = selected.assignedTables.Count().ToString();
+            activeTtxt.Text = selected.activeTables.ToString();
+            totalTtxt.Text = selected.totalTables.ToString();
+            activeCtxt.Text = selected.activeCustomers.ToString();
+            totalCtxt.Text = selected.totalCustomers.ToString();
         }
     }
 }
