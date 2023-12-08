@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    public class Table
+    public class Table: IDeleteParty
     {
         public Table(int tableID, int maxPartySize)
         {
@@ -91,7 +91,7 @@ namespace FinalProject
             assignedSection.activeCustomers += partySat.partySize;
             assignedSection.activeTables++;
         }
-        public void deleteParty()
+        public void DeleteParty()
         {// stops the timer and removes party from party sat
             assignedSection.activeTables--;
             assignedSection.activeCustomers -= partySat.partySize;
