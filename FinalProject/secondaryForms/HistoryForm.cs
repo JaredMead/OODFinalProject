@@ -25,8 +25,13 @@ namespace FinalProject
             historylb.Format += (sender, args) =>
             {
                 var prty = (Party)args.Value;
-                args.Value = string.Format("");
+                args.Value = string.Format("{0},            {1},            {2}", prty.name, prty.partySize, prty.time);
             };
+
+            foreach(Party p in PartyFactory.createdParties)
+            {
+                historylb.Items.Add(p);
+            }
         }
 
         private void closebtn_Click(object sender, EventArgs e)

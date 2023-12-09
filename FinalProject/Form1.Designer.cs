@@ -45,6 +45,8 @@ namespace FinalProject
             this.tbl6btn = new System.Windows.Forms.Button();
             this.tbl5btn = new System.Windows.Forms.Button();
             this.historybtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.waitlistbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbl4btn
@@ -221,11 +223,33 @@ namespace FinalProject
             this.historybtn.UseVisualStyleBackColor = true;
             this.historybtn.Click += new System.EventHandler(this.historybtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(526, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 53);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Add Party to Waitlist";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // waitlistbtn
+            // 
+            this.waitlistbtn.Location = new System.Drawing.Point(106, 12);
+            this.waitlistbtn.Name = "waitlistbtn";
+            this.waitlistbtn.Size = new System.Drawing.Size(88, 53);
+            this.waitlistbtn.TabIndex = 43;
+            this.waitlistbtn.Text = "Waitlist";
+            this.waitlistbtn.UseVisualStyleBackColor = true;
+            this.waitlistbtn.Click += new System.EventHandler(this.waitlistbtn_Click);
+            // 
             // tableOrganiser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 567);
+            this.Controls.Add(this.waitlistbtn);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.historybtn);
             this.Controls.Add(this.tbl5btn);
             this.Controls.Add(this.tbl6btn);
@@ -267,6 +291,8 @@ namespace FinalProject
         private System.Windows.Forms.Button tbl6btn;
         private System.Windows.Forms.Button tbl5btn;
         private System.Windows.Forms.Button historybtn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button waitlistbtn;
     }
 }
 

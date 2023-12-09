@@ -22,3 +22,6 @@ C:\Users\jared\OneDrive\Desktop\School\Fall2023\CSC-260\FinalProject\FinalProjec
 C:\Users\jared\OneDrive\Desktop\School\Fall2023\CSC-260\FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
 C:\Users\jared\OneDrive\Desktop\School\Fall2023\CSC-260\FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\jared\OneDrive\Desktop\School\Fall2023\CSC-260\FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\jared\OneDrive\Desktop\School\Fall2023\CSC-260\FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.HistoryForm.resources
+C:\Users\jared\OneDrive\Desktop\School\Fall2023\CSC-260\FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.WaitlistForm.resources
+C:\Users\jared\OneDrive\Desktop\School\Fall2023\CSC-260\FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.AddtoWait.resources

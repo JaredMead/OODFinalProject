@@ -124,6 +124,16 @@ namespace FinalProject
             HistoryForm openform = new HistoryForm();
             openform.ShowDialog();
         }
+        private void waitlistbtn_Click(object sender, EventArgs e)
+        {
+            WaitlistForm openform = new WaitlistForm();
+            openform.ShowDialog();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddtoWait openform = new AddtoWait();
+            openform.ShowDialog();
+        }
         private void update()
         {
             tbl1btn.BackColor = TableFactory.createdTables[1].backColor;
@@ -136,7 +146,7 @@ namespace FinalProject
             tbl8btn.BackColor = TableFactory.createdTables[8].backColor;
             tbl9btn.BackColor = TableFactory.createdTables[9].backColor;
 
-            SectionsList.Refresh();
+            
         }
     }
 }

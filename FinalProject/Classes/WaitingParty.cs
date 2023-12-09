@@ -25,35 +25,39 @@ namespace FinalProject
 
         public WaitingParty(params string[] phone) : base()
         {
-            waitlist.Add(this);
-            if(phone[0] != null)
+            this.phoneNumber = "Not Given";
+            if(phone.Count() != 0)
             {
                 this.phoneNumber = phone[0];
             }
+            waitlist.Add(this);
         }
         public WaitingParty(string name, params string[] phone) : base(name)
         {
-            waitlist.Add(this);
-            if (phone[0] != null)
+            this.phoneNumber = "Not Given";
+            if (phone.Count() != 0)
             {
                 this.phoneNumber = phone[0];
             }
+            waitlist.Add(this);
         }
         public WaitingParty(int size, params string[] phone) : base(size)
         {
-            waitlist.Add(this);
-            if (phone[0] != null)
+            this.phoneNumber = "Not Given";
+            if (phone.Count() != 0)
             {
                 this.phoneNumber = phone[0];
             }
+            waitlist.Add(this);
         }
         public WaitingParty(int size, string name, params string[] phone) : base(size, name)
         {
-            waitlist.Add(this);
-            if (phone[0] != null)
+            this.phoneNumber = "Not Given";
+            if (phone.Count() != 0)
             {
                 this.phoneNumber = phone[0];
             }
+            waitlist.Add(this);
         }
     }
 }
