@@ -43,6 +43,7 @@ namespace FinalProject
             set
             {
                 _status = value;
+                setTableColor();
             }
         }
         protected System.Drawing.Color _backcolor;
@@ -101,6 +102,25 @@ namespace FinalProject
             partySat = null;
         }
 
+        internal void setTableColor()
+        {
+            if(status == 0)
+            {
+                backColor = System.Drawing.Color.White;
+            }
+            else if(status == 1)
+            {
+                backColor = System.Drawing.Color.Blue;
+            }
+            else if(status == 2)
+            {
+                backColor = System.Drawing.Color.Orange;
+            }
+            else
+            {
+                backColor = System.Drawing.Color.Red;
+            }
+        }
         ~Table()
         {
 

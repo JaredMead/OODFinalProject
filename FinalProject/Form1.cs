@@ -128,11 +128,13 @@ namespace FinalProject
         {
             WaitlistForm openform = new WaitlistForm();
             openform.ShowDialog();
+            update();
         }
         private void button1_Click(object sender, EventArgs e)
         {
             AddtoWait openform = new AddtoWait();
             openform.ShowDialog();
+            update();
         }
         private void update()
         {

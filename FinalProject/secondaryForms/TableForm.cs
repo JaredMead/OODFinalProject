@@ -59,7 +59,6 @@ namespace FinalProject
         {
             if(t.status == 0)
             {
-                t.backColor = Color.Gray;
                 if(t.partySat != null)
                 {
                     t.DeleteParty();
@@ -67,19 +66,13 @@ namespace FinalProject
             }
             else if(t.status == 1)
             {
-                t.backColor = Color.Blue;
                 if(t.partySat == null)
                 {
                     t.createParty(sizetxt.Text, nametxt.Text);
                 }
             }
-            else if(t.status == 2 && t.partySat != null)
-            {
-                t.backColor = Color.Orange;
-            }
             else if(t.status == 3)
             {
-                t.backColor = Color.Red;
                 if(t.partySat != null)
                 {
                     t.DeleteParty();

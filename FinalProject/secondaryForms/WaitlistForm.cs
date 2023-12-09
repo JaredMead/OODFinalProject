@@ -38,5 +38,23 @@ namespace FinalProject
         {
             this.Close();
         }
+
+        private void asignbtn_Click(object sender, EventArgs e)
+        {
+            int index = waitlistlb.SelectedIndex;
+            WaitingParty selected = WaitingParty.waitlist[index];
+            int target = int.Parse(asigntxt.Text);
+            foreach (Table t in TableFactory.createdTables)
+            {
+                if (target == t.ID)
+                {
+                    t.createParty(selected.partySize.ToString(), selected.name);
+                    t.status = 1;
+                    waitlistlb.Items.Remove(target);
+                    WaitingParty.waitlist.Remove(selected);
+                    break;
+                }
+            }
+        }
     }
 }

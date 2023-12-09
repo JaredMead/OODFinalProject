@@ -35,13 +35,16 @@ namespace FinalProject
             this.namelbl = new System.Windows.Forms.Label();
             this.waitlistlb = new System.Windows.Forms.ListBox();
             this.phonelbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.asigntxt = new System.Windows.Forms.TextBox();
+            this.asignbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // closebtn
             // 
-            this.closebtn.Location = new System.Drawing.Point(87, 442);
+            this.closebtn.Location = new System.Drawing.Point(12, 464);
             this.closebtn.Name = "closebtn";
-            this.closebtn.Size = new System.Drawing.Size(75, 23);
+            this.closebtn.Size = new System.Drawing.Size(100, 23);
             this.closebtn.TabIndex = 10;
             this.closebtn.Text = "Close";
             this.closebtn.UseVisualStyleBackColor = true;
@@ -80,7 +83,7 @@ namespace FinalProject
             this.waitlistlb.ItemHeight = 16;
             this.waitlistlb.Location = new System.Drawing.Point(12, 44);
             this.waitlistlb.Name = "waitlistlb";
-            this.waitlistlb.Size = new System.Drawing.Size(253, 388);
+            this.waitlistlb.Size = new System.Drawing.Size(253, 356);
             this.waitlistlb.TabIndex = 6;
             // 
             // phonelbl
@@ -92,11 +95,40 @@ namespace FinalProject
             this.phonelbl.TabIndex = 11;
             this.phonelbl.Text = "Phone Number";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 403);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 51);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Please Enter the table \r\nyou want to asign the \r\nselected party to:\r\n";
+            // 
+            // asigntxt
+            // 
+            this.asigntxt.Location = new System.Drawing.Point(155, 427);
+            this.asigntxt.Name = "asigntxt";
+            this.asigntxt.Size = new System.Drawing.Size(110, 22);
+            this.asigntxt.TabIndex = 13;
+            // 
+            // asignbtn
+            // 
+            this.asignbtn.Location = new System.Drawing.Point(165, 455);
+            this.asignbtn.Name = "asignbtn";
+            this.asignbtn.Size = new System.Drawing.Size(100, 32);
+            this.asignbtn.TabIndex = 14;
+            this.asignbtn.Text = "Assign Table";
+            this.asignbtn.UseVisualStyleBackColor = true;
+            this.asignbtn.Click += new System.EventHandler(this.asignbtn_Click);
+            // 
             // WaitlistForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 482);
+            this.ClientSize = new System.Drawing.Size(299, 499);
+            this.Controls.Add(this.asignbtn);
+            this.Controls.Add(this.asigntxt);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.phonelbl);
             this.Controls.Add(this.closebtn);
             this.Controls.Add(this.timelbl);
@@ -118,5 +150,8 @@ namespace FinalProject
         private System.Windows.Forms.Label namelbl;
         private System.Windows.Forms.ListBox waitlistlb;
         private System.Windows.Forms.Label phonelbl;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox asigntxt;
+        private System.Windows.Forms.Button asignbtn;
     }
 }
