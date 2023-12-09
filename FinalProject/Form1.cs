@@ -146,7 +146,14 @@ namespace FinalProject
             tbl8btn.BackColor = TableFactory.createdTables[8].backColor;
             tbl9btn.BackColor = TableFactory.createdTables[9].backColor;
 
-            
+            SectionsList.Items.Clear();
+            foreach(Section s in SectionFactory.createdSections)
+            {
+                if (s.ID != 0)
+                {
+                    SectionsList.Items.Add(s);
+                }
+            }
         }
     }
 }
